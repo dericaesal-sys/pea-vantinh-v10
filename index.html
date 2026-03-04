@@ -439,36 +439,62 @@
     /* --- TỐI ƯU FOOTER CHO MOBILE --- */
 @media (max-width: 768px) {
     footer {
-        padding: 40px 5% 20px !important;
+        padding: 30px 15px 15px !important;
     }
-    
+
     .f-grid {
-        grid-template-columns: 1fr !important; /* Chuyển về 1 cột duy nhất */
-        gap: 30px !important;
-        text-align: center; /* Căn giữa nội dung cho cân đối */
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        text-align: center;
     }
 
-    .f-logo {
-        justify-content: center;
+    /* Phần giới thiệu đầu tiên */
+    .f-grid > div:first-child {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 20px;
     }
 
-    .socials {
-        justify-content: center;
-    }
-
-    .f-links {
-        align-items: center; /* Căn giữa các đường link */
-        gap: 10px !important;
+    /* Gộp 3 cột cuối nằm ngang thay vì dọc */
+    .f-grid > div:not(:first-child) {
+        display: inline-block !important;
+        width: 31% !important; /* Chia đều 3 cột trên 1 hàng */
+        vertical-align: top;
+        margin: 0 !important;
     }
 
     .f-title {
-        margin-bottom: 15px !important;
-        font-size: 14px !important;
+        font-size: 10px !important; /* Thu nhỏ tiêu đề để không nhảy dòng */
+        margin-bottom: 10px !important;
+        white-space: nowrap;
     }
 
-    /* Ẩn bớt phần Network Status trên mobile để đỡ rối */
-    footer .f-grid > div:last-child {
-        display: none;
+    .f-links {
+        gap: 5px !important;
+    }
+
+    .f-links a {
+        font-size: 11px !important; /* Thu nhỏ chữ link */
+        justify-content: center;
+    }
+
+    .f-links a::before {
+        display: none; /* Bỏ dấu > để tiết kiệm diện tích */
+    }
+
+    /* Tối ưu khung Network Status nhỏ lại */
+    .f-grid > div:last-child > div {
+        padding: 8px !important;
+        margin-top: 5px !important;
+    }
+
+    .f-grid > div:last-child span {
+        font-size: 8px !important;
+    }
+
+    .copy {
+        font-size: 9px !important;
+        margin-top: 20px;
     }
 }
 
@@ -1259,3 +1285,4 @@ function openModal(id) {
 </body>
 
 </html>
+
