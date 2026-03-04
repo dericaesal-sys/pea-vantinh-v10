@@ -436,30 +436,41 @@
     }
     <style>
     /* --- TỐI ƯU HEADER ĐỂ KHÔNG BỊ CẮT CHỮ TRÊN MOBILE --- */
-    @media (max-width: 768px) {
-        /* 1. Nới lỏng Header để Logo không bị ép */
-        nav {
-            padding: 10px 15px !important;
-            height: auto !important; /* Đảm bảo chiều cao co giãn theo nội dung */
-            min-height: 65px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            overflow: visible !important; /* Quan trọng: Cho phép nội dung hiển thị trọn vẹn */
-        }
+    /* --- TỐI ƯU FOOTER CHO MOBILE --- */
+@media (max-width: 768px) {
+    footer {
+        padding: 40px 5% 20px !important;
+    }
+    
+    .f-grid {
+        grid-template-columns: 1fr !important; /* Chuyển về 1 cột duy nhất */
+        gap: 30px !important;
+        text-align: center; /* Căn giữa nội dung cho cân đối */
+    }
 
-        /* 2. Căn chỉnh cụm Logo PEA TINH CONTROL */
-        .logo {
-            font-size: 18px !important; /* Thu nhỏ nhẹ kích thước chữ để vừa chiều ngang */
-            white-space: nowrap; /* Giữ logo trên 1 dòng */
-            flex-shrink: 0;
-            margin-right: 10px;
-        }
+    .f-logo {
+        justify-content: center;
+    }
 
-        .logo-icon {
-            width: 25px !important;
-            height: 25px !important;
-        }
+    .socials {
+        justify-content: center;
+    }
+
+    .f-links {
+        align-items: center; /* Căn giữa các đường link */
+        gap: 10px !important;
+    }
+
+    .f-title {
+        margin-bottom: 15px !important;
+        font-size: 14px !important;
+    }
+
+    /* Ẩn bớt phần Network Status trên mobile để đỡ rối */
+    footer .f-grid > div:last-child {
+        display: none;
+    }
+}
 
         /* 3. Xử lý phần tag V10 bên phải (Neural Protocol) */
         .system-metrics {
@@ -1246,4 +1257,5 @@ function openModal(id) {
 
     </script>
 </body>
+
 </html>
